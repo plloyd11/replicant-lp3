@@ -12,8 +12,8 @@
           <div class="relative m-auto">
             <img
               class="block w-full h-full m-auto"
-              src="@/assets/img/replicant.jpg"
-              alt="Replicant Band Photo"
+              src="@/assets/img/cover.jpg"
+              alt="Malignant Reality Cover"
             />
           </div>
         </div>
@@ -275,8 +275,16 @@
 
 <script>
 import { ref, reactive, computed } from 'vue'
-import nodalFailure from '@/music/nodalFailure.mp3'
-import menacingVoid from '@/music/menacingVoid.mp3'
+import caverns from '@/music/caverns.wav'
+import relinquish from '@/music/relinquish.wav'
+import ektoskull from '@/music/ektoskull.wav'
+import deathcurse from '@/music/deathcurse.wav'
+import coerced from '@/music/coerced.wav'
+import rabid from '@/music/rabid.wav'
+import chassis from '@/music/chassis.wav'
+import dressed from '@/music/dressed.wav'
+import excess from '@/music/excess.wav'
+import ubiquity from '@/music/ubiquity.wav'
 
 import { Howl, Howler } from 'howler'
 
@@ -290,8 +298,16 @@ export default {
 
   setup() {
     const audios = ref([
-      { name: 'Nodal Failure', file: nodalFailure, artist: 'Replicant', howl: null },
-      { name: 'Menacing Void', file: menacingVoid, artist: 'Replicant', howl: null }
+      { name: 'Caverns Of Insipid Reflection', file: caverns, artist: 'Replicant', howl: null },
+      { name: 'Relinquish The Self', file: relinquish, artist: 'Replicant', howl: null },
+      { name: 'Ektoskull', file: ektoskull, artist: 'Replicant', howl: null },
+      { name: 'Death Curse', file: deathcurse, artist: 'Replicant', howl: null },
+      { name: 'Coerced To Be', file: coerced, artist: 'Replicant', howl: null },
+      { name: 'Rabid Future', file: rabid, artist: 'Replicant', howl: null },
+      { name: 'Chassis Of Deceit', file: chassis, artist: 'Replicant', howl: null },
+      { name: 'Dressed In Violence', file: dressed, artist: 'Replicant', howl: null },
+      { name: 'Excess Womb', file: excess, artist: 'Replicant', howl: null },
+      { name: 'The Ubiquity Of Time', file: ubiquity, artist: 'Replicant', howl: null }
     ])
     const step = ref(0)
     const nextButton = ref(true)
@@ -328,7 +344,7 @@ export default {
         sound = audio.howl = new Howl({
           src: [audio.file],
           html5: true, // A live stream can only be played through HTML5 Audio.
-          format: ['mp3', 'aac'],
+          format: ['wav', 'aac'],
           onplay: function() {
             pauseTrack.value = true
             nextButton.value = true
